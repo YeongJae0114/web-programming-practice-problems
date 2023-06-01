@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h2>라면 만드는 순서</h2><hr>
+    <ol id="a1" onclick="asd()" type="A">
+        <li>물을 끓인다</li>
+        <script>
+            function asd(){
+                let s = prompt();
+                let c = document.createElement("li");
+                c.innerHTML=s;
+                a=document.getElementById('a1');
+                a.appendChild(c);
+    
+            }
+        </script>
+
+
+</body>
+</html>

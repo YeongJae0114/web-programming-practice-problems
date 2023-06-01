@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes bob{
+            form{ transform: rotate(0deg);}
+            to{transform: rotate(360deg);}
+        }
+        @keyframes bob1{
+            0%{ transform: rotate(-90deg);}
+            50%{ transform: rotate(90deg);}
+            100%{ transform: rotate(-90deg);}
+        }
+        .my1{
+            animation-name: bob;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+        .my2{
+            animation-name: bob1;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body>
+    <h2>스폰지밥</h2><hr>
+
+    <img src="/img/캡처.PNG" alt="" class="my1">
+    <br><br><br>
+
+    <img src="img/캡처.PNG" class="my2">
+</body>
+</html>

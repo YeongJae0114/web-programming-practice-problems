@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            font-size: 30px;
+        }
+    </style>
+    <script>
+       	window.onmouseover = function(e) {
+ 	        if(e.target.tagName.toLowerCase() != "span") {
+                return 0;
+            }else{
+                e.target.style.textDecoration ="underline";
+            }
+ 	       
+ 	    }
+ 	    window.onmouseout = function(e) {
+            if(e.target.tagName.toLowerCase() != "span") {
+                return 0;
+            }else{
+                e.target.style.textDecoration ="none";
+            }
+ 	    }
+    </script>
+
+</head>
+<body>
+    <h2>span 태그에만 onmouseover / onmouseout</h2><hr>
+    <p>법률이 정하는 주요방위산업체에 종사하는 근로자의 <span>단체행동권은</span>  법률이 정하는 바에 의하여 이를 제한하거나 인정하지 아니할 수 있다.
+    <p>국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 <span>소비자보호운동을</span> 법률이 정하는 바에 의하여 보장한다.</p>
+    <p>대법원과 <span>각급법원의</span> 조직은 법률로 정한다. 공무원의 신분과 정치적 중립성은 법률이 정하는 바에 의하여 보장된다.</p>
+
+</body>
+</html>

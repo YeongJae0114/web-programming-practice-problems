@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let last;
+        
+        window.onclick = function(e){
+            if (last != null){// 이전에 클릭된 것이 있다면
+                last.style.fontSize = "1em";
+            } 
+            if(e.target.tagName.toLowerCase() != "li"){
+                return;
+            }else{
+                e.target.style.fontSize = "1.3em";
+                last = e.target;
+            }
+
+        }
+
+
+    
+    </script>
+
+</head>
+<body>
+    <h2>아이템을 클릭하면 1.3배 크기로 </h2><hr>
+    <p>여름 방학때 하고 싶은 것들</p>
+    <ul>
+        <li>바다가기</li>
+        <li>놀러가기</li>
+        <li>책 읽기</li>
+        <li>공부하기</li>
+    </ul>
+</body>
+</html>

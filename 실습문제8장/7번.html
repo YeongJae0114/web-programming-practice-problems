@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h2>7번 문제</h2>
+    <hr>
+    <img id="my" src="./img/test3.PNG" alt="" onclick="asd(this)">
+
+    <script>
+        let n=90;
+        function asd(obj){
+            obj.style.transform="rotate("+n+"deg)";
+            n +=90;
+            n %=360;
+        }
+    </script>
+    
+</body>
+</html>

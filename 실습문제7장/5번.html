@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let names= new Array("wonsun", "jaemoonlee","kitae","gracehwang");
+        //(1)
+        document.write("이름 : ")
+        for(let i=0; i<names.length;i++){
+            document.write(names[i]+" ");
+        }
+
+        document.write("<hr>");
+        document.write("가장 긴 이름 : ")
+        //(2)
+        let ln=[]
+        for(let i=0; i<names.length;i++){
+            ln[i]=names[i].length;
+        }
+        max=ln[0];
+        for(let i=0; i<ln.length; i++){
+            if(ln[i]>max){
+                max=ln[i];
+                idx=i;
+            }
+        }
+        document.write(names[idx]);
+        //(3)
+        let dic=names[0];
+        for( let i=0; i<names.length; i++){
+            if(dic>=names[i]){
+                dic=names[i];
+            }
+        }
+        document.write("<hr>");
+        document.write("사전에서 먼저 나오는 이름 : ");
+        document.write(dic);
+        //(4)
+        document.write("<hr>");
+        document.write("증가 순 재정렬 : ");
+        names.sort();
+
+        for(let i=0; i<names.length;i++){
+            document.write(names[i]+" ");
+        }
+
+
+       
+
+    </script>
+</body>
+</html>
