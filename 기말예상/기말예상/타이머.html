@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+
+        }
+    </style>
+    <script>
+        let TimeID = setInterval("Timer()", 1000);
+        let time = 6000;
+        
+        function Timer(){
+            let second = document.getElementById('div1'); 
+
+            if(time == 0){
+                second.innerHTML='<h2>땡</h2>';
+                clearInterval(TimeID);
+            }else{
+                time = time - 1000;
+                second.innerHTML=time/1000+' 초';
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h2>카운트 다운</h2><hr>
+    <div id="div1">
+
+    </div>
+    <button onclick="Timer()">카운트 시작</button>
+    
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+td {
+	padding-left : 10px;
+	padding-right : 10px;
+}
+    </style>
+    <script>
+       function calc(){
+            let total = 0;
+            let Qarray = document.getElementsByClassName('question');
+            let Aarray = document.getElementsByClassName('answer');
+
+            for(let i=0; i<Qarray.length; i++){
+                let q = Qarray[i].innerHTML;
+                let qe = Math.floor(eval(q));
+                let a = parseInt(Aarray[i].value);
+
+                if(a=='' || isNaN(a)){
+                    total = total +0;
+                    Qarray[i].style.textDecoration = "line-through";
+                }else if(a==qe){
+                    total = total +1;
+                    Qarray[i].style.textDecoration = "none";
+
+                }else {
+                    total = total +0;
+                    Qarray[i].style.textDecoration = "line-through";
+                }
+            }
+            document.getElementById('score').innerHTML=total;
+        }
+        function recalc(){
+
+            let ques = document.getElementsByClassName('question');
+            let ans = document.getElementsByClassName('answer');
+        
+            let list=['+','-','/','*'];
+
+            for(let i=0; i<ques.length;i++){
+
+                let ran = Math.floor(Math.random()*4);
+                let q1 = Math.floor(Math.random()*25+1)
+                let q2 = Math.floor(Math.random()*25+1)
+
+                let newq =q1+list[ran]+q2; 
+                ques[i].innerHTML = newq;
+
+                ques[i].style.textDecoration = "none";
+                ans[i].value="";
+                
+            }
+
+        }
+    </script>
+
+</head>
+<body onload="recalc()">
+    <h2>산수문제를 풀어 봅시당</h2><hr><br>
+    <form>
+        <table>
+        <tr><td class="question"></td><td><input class="answer" type="text" size="8"></td></tr>
+        <tr><td class="question"></td><td><input class="answer" type="text" size="8"></td></tr>
+        <tr><td class="question"></td><td><input class="answer" type="text" size="8"></td></tr>
+        <tr><td class="question"></td><td><input class="answer" type="text" size="8"></td></tr>
+        <tr><td><button type="button" onclick="calc()">채점</button></td>
+            <td><span id="score">0</span></td>
+        <td><button type="button" onclick="recalc()">다시</button></td></tr>
+
+        </table>
+        </form>
+
+    </form>
+</body>
+</html>

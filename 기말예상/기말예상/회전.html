@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin-top: 100px;
+            text-align: center;
+        }
+        @keyframes turn {
+            0% { transform: rotate(0deg); }
+           
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+
+    <script>
+        let ang=0;
+        function rotate(){
+            ang +=90;
+            let img = document.getElementById('img');
+            //img.style.cssText = 'transform: rotate('+ang+'deg);'
+            img.style.transform = 'rotate('+ang+'deg)';
+        }
+
+        function rotate1(){
+            ang -=90;
+            let img = document.getElementById('img');
+            //img.style.cssText = 'transform: rotate('+ang+'deg);'
+            img.style.rotate = ang+'deg';
+        }
+        function rotate2(){
+            
+            let img = document.getElementById('img');
+            if(img.style.animationIterationCount=='infinite'){
+                img.style.animationIterationCount ='0'
+            }else{
+                img.style.animation="turn 1s infinite";
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <div>
+        <img id="img" src="https://i.namu.wiki/i/S6tkuGmngSNmK_klkMm28eZ62EdfnOm0ge1jZJkAUjPrtxI1k02Yz8Obt_YqsedqpvKWAhQgg8t5MUIDd9MmMaLoP7RsaXNTP_VaQur0-VLA8BqXvgez4SF5QC3Py1mlA36RpuZH3TKCrCFw8xHgXQ.webp" alt="">
+    </div>
+    <div>
+
+        <button id="right" onclick="rotate()">시계방향으로 회전</button>
+        <button id="left" onclick=rotate1()>반시계방향으로 회전</button>
+
+        <button id="trun" onclick="rotate2()">한 바퀴 회전</button>
+
+        <button id="left_c">왼쪽으로 회전 중심이동</button>
+        <button id="right_c">오른쪽으로 회전 중심이동</button>
+        
+    </div>
+</body>
+</html>

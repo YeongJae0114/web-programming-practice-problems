@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let sum=0;
+
+        function asd(){
+            let found = null;
+            let rest = document.getElementsByName('rest');
+
+            for(let i=0; i<rest.length; i++){
+                if(rest[i].checked ==true){
+                    found = rest[i];
+                }
+            }
+            let a1 = document.getElementById('a1').innerHTML='<h2>'+found.value+'</h2>'
+
+        }
+
+
+        function asd2(cl){
+            
+            if(cl.checked==true){
+                sum = sum + parseInt(cl.value);
+            }else{
+                sum = sum - parseInt(cl.value);
+            }
+            let a2 = document.getElementById('a2').innerHTML='<h2>'+sum+'</h2>'
+        }
+            
+    </script>
+</head>
+<body>
+    <h2></h2>
+    <form action="">
+        <input type="radio" value="chi" name="rest" checked>중국집
+        <input type="radio" value="bun" name="rest">분식집
+        <input type="radio" value="hom" name="rest">우리집
+        <input type="button" value="제출" onclick="asd()">
+    </form>
+        <div id="a1"></div>
+
+
+        <br>
+    <form action="">
+        <input type="checkbox" name="food" value="1000" onclick="asd2(this)">짜장
+        <input type="checkbox" name="food" value="300" onclick="asd2(this)">떡볶이
+        <input type="checkbox" name="food" value="10000" onclick="asd2(this)">몰라임마
+        
+        <div id="a2"></div>
+
+    </form>
+
+
+
+</body>
+</html>

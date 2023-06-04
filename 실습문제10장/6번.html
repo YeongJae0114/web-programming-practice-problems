@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid ;
+            width: 5%;
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        let timeID = setInterval('time()',1000);
+        start= true;
+
+        function time(){
+            let now = new Date();
+            let today = now.toLocaleTimeString();
+            document.getElementById('div').innerHTML = today;
+        }
+
+        function time_stop(){
+            
+            if(start != true){
+                timeID = setInterval('time()',1000);
+                document.getElementById('div').style.color = 'black'
+                start=true;    
+            }else{
+                clearInterval(timeID);
+                document.getElementById('div').style.color = 'blanchedalmond'
+                start=false;    
+            }
+            
+        }
+    </script>
+</head>
+<body onload="time()">
+      <h2>div 태그에 시계 만들기</h2><hr>
+      <div id="div" onclick="time_stop(this)"></div>
+
+</body>
+</html>
